@@ -230,3 +230,14 @@ s = arr1[1:4] // индексы 1, 2, 3
 // функция make
 a := make([]int, 5, 10) // 5 - len 10 - capacity, тип а - вырезки из int, массив будет длины 10, в вырезку войдут только 5 элементов
 ```
+Detailed work of `make`:
+```Go
+a := make([]int, 5, 6);
+b := a[2:3]
+fmt.Println(a, len(a), cap(a), len(b), cap(b)) // [0 0 0 0 0] 5 6 1 4
+c := append(a, 1)
+fmt.Println(a, len(a), cap(a), len(b), cap(b)) // [0 0 0 0 0] 5 6 1 4
+fmt.Println(c, len(c), cap(c), len(c), cap(c)) // [0 0 0 0 0 1] 6 6 6 6
+d := append(c, 2)
+fmt.Println(d, len(d), cap(d)) // [0 0 0 0 0 1 2] 7 12
+```
