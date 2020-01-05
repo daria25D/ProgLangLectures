@@ -161,14 +161,14 @@ enum Fruits { // класс специального вида
 }
 ```
 ```Java
-enum Fruits { 
-	private int price;
-	Apple (10), 
+enum Fruits {
+	Apple(10),
 	Orange(20),
-	Pineapple(30),
-	... 
+	Pineapple(30);
+
+	private int price;
 	// может быть конструктор
-	public Fruits(int price) {
+	Fruits(int price) {
 		this.price = price;	
 	} 
 }
