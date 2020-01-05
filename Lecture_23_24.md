@@ -156,7 +156,7 @@ try-finally присутствует во всех объектно-рефере
 // foreach(T x in C) S
 for (T x : C) S // C поддерживает коллекцию
 ```
-```Java
+```C++
 int a[] = {1, 2, 3, 4, 5};
 for (int x : a) {...}
 for (auto x : a) {...}
