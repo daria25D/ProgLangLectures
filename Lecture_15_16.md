@@ -9,7 +9,14 @@ enum Color {
 	Blue  = 0x0000FF
 }
 var c = Color.Red;
-c++;
+c++; // Now has value 0xFF0001.
+
+enum Planet {
+    Earth,
+    Mars
+}
+var c = Planet.Earth;
+c++; // Now has value Planet.Mars.
 ```
 ```C#
 enum TrafficColor:byte {
