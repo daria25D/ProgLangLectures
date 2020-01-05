@@ -121,7 +121,7 @@ class X {
 class Y {
 	public void g() {..}
 	public static void gg() {..}
-};
+}
 void xxx() {
 	cb = new pvf(foo);
 	Y y;
