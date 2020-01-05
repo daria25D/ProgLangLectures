@@ -263,8 +263,9 @@ DIMENSION REAL A(N)
 
 *C#:*
 ```
-void foo(int i) {
-	int []a = new int[N];
+void foo(int i) 
+{
+	int[] a = new int[N];
 	a[i] = 0; // квазистатическая проверка 0<=i<N, как если бы компилятор знал значение i
 }
 ```
