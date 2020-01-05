@@ -80,8 +80,8 @@ a.Y = 1;
 class X {
 	private int _y;
 	public int Y { // публичное свойство, нужны get и set
-		set() { _y = value;} // value - неявный параметр set
-		get() {return _y;}
+		set { _y = value; } // value - неявный параметр set
+		get { return _y; }
 	}
 }
 /*
