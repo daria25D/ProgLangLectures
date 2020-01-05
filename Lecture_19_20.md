@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {} // более наглядно, что argv 
 ```Java
 // Java
 class Point{...}
-Point []p = new Point[N];
+Point[] p = new Point[N];
 ```
 ```Ada
 procedure P(N: integer) is
@@ -60,12 +60,11 @@ void *alloca(size_t n); // выделяет память на стеке
 ```
 *Java:*
 ```Java
-int [][]b = new int[][N];
+int[][] b = new int[N][];
 for (int i = 0; i < N; i++) 
 	b[i] = new int[i + 1];
 // b[i][j]
-int [,]a = new int[10, 5]; // прямоугольный массив
-// a[i,j]
+int [,]a = new int[10, 5]; // Заметка от студента: НЕТ ТАКОГО СИНТАКСИСА В JAVA!
 ```
 *C#:*
 ```C#
