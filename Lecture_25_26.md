@@ -229,7 +229,7 @@ inc1(5)
 function add(x, y) {return x+ y}
 function add1()
 {
-	return x->add(x, 1) // или вот так:
+	return x => add(x, 1) // или вот так:
 	// function(x) {return add(x, 1)} // анонимная функция
 }
 ```
