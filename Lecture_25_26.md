@@ -85,10 +85,10 @@ IEnumerator<T> GetEnumerator() {
 *Python:*
 ```python
 #python2
-xrange(1..1000) # генератор
-range(1..1000) # список
+xrange(1, 1000) # генератор
+range(1, 1000) # список
 #python3
-range(1..100) # генератор
+range(1, 100) # генератор
 def fib(n):
 	a = 1
 	b = 1
