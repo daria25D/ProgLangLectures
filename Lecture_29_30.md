@@ -21,7 +21,7 @@ interface ISomething {
 	void foo();
 	int bar(int i);
 }
-class CoClass omplements ISomething {
+class CoClass implements ISomething {
 	public void foo() {..}
 	public int bar(int i) {..}
 }
@@ -80,7 +80,7 @@ interface Function<T, R> {
 	T andThen(R x);
 }
 Function<T, R> f = (T x)->{return r;// r типа R};
-Function<Integer, String> f1 = new Function<Integer, String>{
+Function<Integer, String> f1 = new Function<Integer, String>() {
 	String apply(Integer i) {
 		String.valueOf(i);
 	}
@@ -99,10 +99,10 @@ Function<T, R> f1 = Class::method; // method должен удовлетворя
 //Class:method
 BiFunction<Class, T, R> f2 = Class::method;
 Class c;
-R r = f2(c, t);
+R r = f2.apply(c, t);
 // ссылка первого рода (самим надо передавать this)
 Function<T, R> f3 = c::method; // c - объект класса, даст ссылку на this, метод нестатический
-R r = f3(t);
+R r = f3.apply(t);
 // ссылка на конструктор
 Class::new; // может удовлетворять практически любому интерфейсу. если конструктор умолчания, то удовлетворяет Supplier
 ```
@@ -112,7 +112,7 @@ Locale lRu = f.apply("ru", "RU");
 Locale lEn = f.apply("en", "UK");
 // варианты f
 // 1
-BiFunction<String, String, Locale> f = new BiFunction<String, String, Locale> {
+BiFunction<String, String, Locale> f = new BiFunction<String, String, Locale>() {
 	Locale apply(String lang, String country) {
 		return new Locale(lang, country);
 	}
@@ -126,10 +126,10 @@ BiFunction<String, String, Locale> f = Locale::new;
 ```Java
 // Stream API
 List<int> l = new List<int>();
-l.Stream().max((i, j)-> i > j);// max - терминальный метод, как и min(), sum()
+l.stream().max((i, j)-> i > j);// max - терминальный метод, как и min(), sum()
 // еще у потоков есть методы average(), count() и другие
 // sum и average - варианты метода reduce
-l.Stream.filter(x->x>0).sorted().map(System::println); // filter оставит только числа >0, sorted - терминальный метод, сортировка, map распечатает с помощью println
+l.stream().filter(x->x>0).sorted().map(System::println); // filter оставит только числа >0, sorted - терминальный метод, сортировка, map распечатает с помощью println
 // иначе нужно было бы делать
 for (int x: l) {/*filter*/} // получится какая-то последовательность l1
 for (int x: l1) {/*sort*/}
@@ -140,7 +140,7 @@ Optional<T> // либо пусто, либо какое-то значение
 Optional<Integer>
 // вместо Stream можно сделать parallelStream, тогда операции будут применяться параллельно
 //.reduce(initVal, BinaryOperator<T> f)
-l.Stream.reduce(0, (x, y)-> x + y); // так можно записать sum через reduce
+l.stream().reduce(0, (x, y)-> x + y); // так можно записать sum через reduce
 ```
 ### Go
 ```Go
