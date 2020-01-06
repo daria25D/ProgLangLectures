@@ -152,7 +152,11 @@ void foo(params Object[] o); // переменный список парамет
 ```
 *Swift:*
 ```Swift
-func foo(a.Int, d...Double[])->void
+func foo(_ a: Int, _ d: Double...) {
+    print(a, d) // 1 [2.0, 3.0, 4.0]
+}
+
+foo(1, 2, 3, 4)
 ```
 *Java и C#:*
 ```Java
