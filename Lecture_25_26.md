@@ -148,7 +148,7 @@ void foo(int a, double[] d); // разные функции!
 foo(0, 1.0, 2.0, 3.0); // соберется в массив и передастся в первую функцию
 foo(0, new double[]{1.0, 2.0, 3.0}); // явное задание массива double
 void foo(params Object[] o); // переменный список параметов любого типа
-// Java: void foo(..Object o)
+// Java: void foo(Object... o)
 ```
 *Swift:*
 ```Swift
