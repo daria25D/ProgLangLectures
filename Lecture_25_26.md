@@ -85,10 +85,10 @@ IEnumerator<T> GetEnumerator() {
 *Python:*
 ```python
 #python2
-xrange(1..1000) # генератор
-range(1..1000) # список
+xrange(1, 1000) # генератор
+range(1, 1000) # список
 #python3
-range(1..100) # генератор
+range(1, 100) # генератор
 def fib(n):
 	a = 1
 	b = 1
@@ -148,11 +148,15 @@ void foo(int a, double[] d); // разные функции!
 foo(0, 1.0, 2.0, 3.0); // соберется в массив и передастся в первую функцию
 foo(0, new double[]{1.0, 2.0, 3.0}); // явное задание массива double
 void foo(params Object[] o); // переменный список параметов любого типа
-// Java: void foo(..Object o)
+// Java: void foo(Object... o)
 ```
 *Swift:*
 ```Swift
-func foo(a.Int, d...Double[])->void
+func foo(_ a: Int, _ d: Double...) {
+    print(a, d) // 1 [2.0, 3.0, 4.0]
+}
+
+foo(1, 2, 3, 4)
 ```
 *Java и C#:*
 ```Java
@@ -225,7 +229,7 @@ inc1(5)
 function add(x, y) {return x+ y}
 function add1()
 {
-	return x->add(x, 1) // или вот так:
+	return x => add(x, 1) // или вот так:
 	// function(x) {return add(x, 1)} // анонимная функция
 }
 ```

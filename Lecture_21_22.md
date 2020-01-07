@@ -228,7 +228,7 @@ var s1:String = "B"; // mutable
 
 Изменение функцией своих параметров --- побочный эффект.
 Изменение функцией глобальных переменных --- нежелательный побочны эффект.
->"GOTO statement considered harmful"
+> "GOTO statement considered harmful"
 
 Все арифметико-логические команды --- это выражения (expressions).
 

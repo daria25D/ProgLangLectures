@@ -107,8 +107,8 @@ find_if(begin(arr), end(arr), [k](int x) {return x == k;});
 ```C#
 type fii = function(i, j : integer) : integer;
 ```
-*Java:*
-```Java
+*C#:*
+```C#
 // все есть класс
 //System Delegate
 //	MulticastDelegate
@@ -121,7 +121,7 @@ class X {
 class Y {
 	public void g() {..}
 	public static void gg() {..}
-};
+}
 void xxx() {
 	cb = new pvf(foo);
 	Y y;
@@ -132,7 +132,7 @@ void xxx() {
 	
 ```
 Делегаты не являются отдельным типом данных. Зато используется для оповещения о событиях (подписка: +=, отписка: -=,  рассылка - вызов).
-```Java
+```C#
 public event pvf myEv; // на этот экзамепляр: изнутри применимы все операции, извне (из другого класса) только += и -=.
 myEv = new pvf(X.foo)
 myEv();
